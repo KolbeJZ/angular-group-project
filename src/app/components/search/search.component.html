@@ -1,0 +1,18 @@
+<div class="container">
+  <h2 *ngIf="getCountry() === 'us'">Search news from United States</h2>
+  <!-- <h2 *ngIf="getCountry() === 'gb'">Search news from Great Britain</h2> -->
+
+  <div class="col-md-8 col-md-offset-3">
+    <form #searchForm="ngForm" role="form" id="form-buscar" (ngSubmit)="onSearch(searchForm.value)" autocomplete="off">
+      <div class="form-group">
+        <input (ngModel)="query" class="form-control" type="text" name="query"
+                id="query" placeholder="Search..." required/>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of searchResults">
+      <app-news-thumbnail [article]="article"></app-news-thumbnail>
+    </div>
+  </div>
+</div>

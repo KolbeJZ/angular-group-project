@@ -1,0 +1,34 @@
+.pad-left {
+  margin-left: 10px;
+}
+
+.well div {
+  color: #bbb;
+}
+
+.thumbnail {
+  min-height: 460px;
+  min-width: 250px;
+  max-height: 460px;
+}
+
+img {
+  max-height: 160px;
+}
+
+p {
+  margin: 10px;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 62px;
+}
+
+h3 {
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  overflow: hidden;
+  max-height: 4.5em;
+}

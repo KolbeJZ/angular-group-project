@@ -1,0 +1,10 @@
+<div>
+  <h2 *ngIf="getCountry() === 'us'">Top {{category}} news from United States</h2>
+  <h2 *ngIf="getCountry() === 'gb'">Top {{category}} news from Great Britain</h2>
+  <hr/>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of topNews">
+      <app-news-thumbnail [article]="article"></app-news-thumbnail>
+    </div>
+  </div>
+</div>
