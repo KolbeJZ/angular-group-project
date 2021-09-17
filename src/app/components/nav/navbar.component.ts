@@ -21,7 +21,6 @@ export class NavbarComponent {
   }
 
   changeCountry(country: string) {
-    // localStorage.setItem('country', country);
     const url = this.router.url;
 
     if (url === '/news') {

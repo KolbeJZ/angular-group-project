@@ -20,6 +20,7 @@ import { SubjectProvider } from 'src/services/subject-provider.service';
 import { CategoryThumbnailComponent } from './components/category-thumbnails/category-thumbnail.component';
 import { ExpandCategoryComponent } from './components/categories/expand-category.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { SearchComponent } from './components/search/search.component';
     CategoryListComponent,
     CategoryThumbnailComponent,
     ExpandCategoryComponent,
-    SearchComponent
+    SearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
