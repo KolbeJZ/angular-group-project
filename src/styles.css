@@ -1,14 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
 
 /* You can add global styles to this file, and also import other style files */
-
-.hoverwell:hover {
-  background-color: #485563;
-  cursor: pointer;
+body {
+  background-color:#368f8b;
+  color: black;
+}
+h3 a p {
+  color:black;
 }
 
+#well-hoverwell-thumbnail {
+  background-color:#ddbea8
+}
+.hoverwell:hover {
+  background-color: #5497df;
+  cursor: pointer;
+}
+h1.a{
+  color:#ddbea8;
+  display:inline-block;
+  font-size: 30px;
+  /* padding-left:50px; */
+  /* padding-top:10px; */
+}
+h1.b{
+  color:#160f29;
+  display:inline-block;
+  font-size: 30px;
+  /* padding-top:10px; */
+}
+.container-fluid {
+  background-color: #ddbea8;
+}
 .container {
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .pointable {
@@ -16,7 +41,7 @@
 }
 
 button {
-  color: #555;
+  color: rgb(116, 206, 248);
 }
 
 [hidden] {

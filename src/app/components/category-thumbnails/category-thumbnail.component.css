@@ -1,9 +1,11 @@
 .pad-left {
   margin-left: 10px;
 }
-
+#well-hoverwell {
+  background-color: #ddbea8;
+}
 .well div {
-  color: #bbb;
+  color: rgb(255, 112, 112);
 }
 
 .thumbnail-category {
