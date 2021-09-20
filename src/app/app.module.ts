@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore'
 
 import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
@@ -21,7 +24,11 @@ import { CategoryThumbnailComponent } from './components/category-thumbnails/cat
 import { ExpandCategoryComponent } from './components/categories/expand-category.component';
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
+import { FirebaseLoginService } from 'src/services/firebaseLogin';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ProfileComponent } from './components/profile/profile.component';
 
+export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
   declarations: [
@@ -35,21 +42,26 @@ import { LoginComponent } from './components/login/login.component';
     CategoryThumbnailComponent,
     ExpandCategoryComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(
-      appRoutes)
+      appRoutes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [
     NewsService,
     NewsListResolver,
     StorageService,
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
-    SubjectProvider
+    SubjectProvider,
+    FirebaseLoginService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })

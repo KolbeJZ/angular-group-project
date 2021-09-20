@@ -4,6 +4,15 @@
 
 export const environment = {
   production: false,
+  firebaseConfig: {
+    apiKey: "AIzaSyA38B6JBctxr2ZpuQJobLpJBTBciRyV-O8",
+    authDomain: "angular-news-app-9aa9d.firebaseapp.com",
+    projectId: "angular-news-app-9aa9d",
+    storageBucket: "angular-news-app-9aa9d.appspot.com",
+    messagingSenderId: "342931403897",
+    appId: "1:342931403897:web:c40d304b6a473e32d310a8",
+    measurementId: "G-7DT8FPRW2N"
+  }
 };
 /*
  * For easier debugging in development mode, you can import the following file
