@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import {AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireAuth } from '@angular/fire/auth';
 import {auth } from 'firebase/app';
 import { Router } from '@angular/router';
 

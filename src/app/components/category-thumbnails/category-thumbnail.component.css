@@ -35,3 +35,6 @@ h3 {
   overflow: hidden;
   max-height: 4.5em;
 }
+.mat-icon {
+  padding-left: 70%;
+}

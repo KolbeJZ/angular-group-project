@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-news-app-9aa9d": {
+      "hosting": {
+        "news-client": [
+          "angular-news-app-9aa9d"
+        ]
+      }
+    }
+  }
+}

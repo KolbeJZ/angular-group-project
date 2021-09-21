@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore'
-
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFirestoreModule } from 'angularfire2/firestore'
 import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewsThumbnailComponent } from './components/news-thumbnails/news-thumbnail.component';
@@ -25,9 +24,16 @@ import { ExpandCategoryComponent } from './components/categories/expand-category
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { FirebaseLoginService } from 'src/services/firebaseLogin';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { ProfileComponent } from './components/profile/profile.component';
 
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+
+import { ProfileComponent } from './components/profile/profile.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule} from '@angular/material/icon';
+import { GuardService } from 'src/services/guard.service';
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -52,7 +58,11 @@ export const firebaseConfig = environment.firebaseConfig;
     RouterModule.forRoot(
       appRoutes),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   providers: [
     NewsService,
@@ -61,7 +71,8 @@ export const firebaseConfig = environment.firebaseConfig;
     { provide: HTTP_INTERCEPTORS, useClass: AddTokenInterceptor, multi: true },
     SubjectProvider,
     FirebaseLoginService,
-    AngularFireAuth
+    AngularFireAuthModule,
+    GuardService
   ],
   bootstrap: [AppComponent]
 })
