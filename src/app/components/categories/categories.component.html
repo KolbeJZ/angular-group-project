@@ -1,37 +1,37 @@
 <div class="container">
-  <h2 *ngIf="getCountry() === 'us'">Top 5 news by categories from United States</h2>
+  <h2 *ngIf="getCountry() === 'us'">Top 5 news by categories</h2>
   <div class="row">
-    <h3>Business category - <a [routerLink]="['/expand', 'business']">Expand</a></h3>
+    <h3>Business category - <a style="color:blue" [routerLink]="['/expand', 'business']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'business'"></app-category-list>
   </div>
   <div class="row">
-    <h3>General category - <a [routerLink]="['/expand', 'general']">Expand</a></h3>
+    <h3>General category - <a style="color:blue" [routerLink]="['/expand', 'general']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'general'"></app-category-list>
   </div>
   <div class="row">
-    <h3>Entertainment category - <a [routerLink]="['/expand', 'entertainment']">Expand</a></h3>
+    <h3>Entertainment category - <a style="color:blue" [routerLink]="['/expand', 'entertainment']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'entertainment'"></app-category-list>
   </div>
   <div class="row">
-    <h3>Sport category - <a [routerLink]="['/expand', 'sport']">Expand</a></h3>
+    <h3>Sport category - <a style="color:blue" [routerLink]="['/expand', 'sport']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'sport'"></app-category-list>
   </div>
   <div class="row">
-    <h3>Science category - <a [routerLink]="['/expand', 'science']">Expand</a></h3>
+    <h3>Science category - <a style="color:blue" [routerLink]="['/expand', 'science']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'science'"></app-category-list>
   </div>
   <div class="row">
-    <h3>Technology category - <a [routerLink]="['/expand', 'technology']">Expand</a></h3>
+    <h3>Technology category - <a style="color:blue" [routerLink]="['/expand', 'technology']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'technology'"></app-category-list>
   </div>
   <div class="row">
-    <h3>Health category - <a [routerLink]="['/expand', 'health']">Expand</a></h3>
+    <h3>Health category - <a style="color:blue" [routerLink]="['/expand', 'health']">Expand</a></h3>
     <hr/>
     <app-category-list [category]="'health'"></app-category-list>
   </div>

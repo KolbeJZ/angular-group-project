@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirebaseLoginService } from 'src/services/firebaseLogin';
 
 @Component({
   selector: 'app-root',

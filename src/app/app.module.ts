@@ -49,7 +49,7 @@ export const firebaseConfig = environment.firebaseConfig;
     ExpandCategoryComponent,
     SearchComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

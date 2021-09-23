@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class FirebaseLoginService  {
+  logout(arg0: { returnTo: string; }) {
+    throw new Error('Method not implemented.');
+  }
   constructor(
       public afAuth: AngularFireAuth, 
       private router: Router,
