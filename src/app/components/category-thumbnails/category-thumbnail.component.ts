@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, ViewEncapsulation } from '@angu
 import { IArticle } from 'src/models/Article';
 import { StorageService } from 'src/services/storage.service';
 import { Router } from '@angular/router';
+import { FirebaseLoginService} from 'src/services/firebaseLogin';
 
 @Component({
   selector: 'app-category-thumbnail',
@@ -16,7 +17,8 @@ export class CategoryThumbnailComponent {
   user: any;
 
   constructor(private storage: StorageService,
-              private router: Router) {
+              private router: Router,
+              private db: FirebaseLoginService) {
 
   }
   // addToFavorites(item: IArticle) {
@@ -28,8 +30,13 @@ export class CategoryThumbnailComponent {
     this.router.navigate(['/article']);
   }
 
-  public toggleSelected() {
+  public toggleSelected(article: IArticle) {
     this.selected = !this.selected;
     this.selectedChange.emit(this.selected);
+    if(this.selected) {
+      this.db.like(article.url);
+    } else {
+      this.db.delete(article.url);
+    }
   }
 }
