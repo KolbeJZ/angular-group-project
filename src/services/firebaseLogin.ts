@@ -1,10 +1,13 @@
 import { Injectable, NgZone } from '@angular/core';
-import {AngularFireAuth } from 'angularfire2/auth';
+import {AngularFireAuth } from '@angular/fire/auth';
 import {auth } from 'firebase/app';
 import { Router } from '@angular/router';
 
 @Injectable()
 export class FirebaseLoginService  {
+  logout(arg0: { returnTo: string; }) {
+    throw new Error('Method not implemented.');
+  }
   constructor(
       public afAuth: AngularFireAuth, 
       private router: Router,

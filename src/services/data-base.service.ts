@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, SnapshotOptions } from 'angularfire2/firestore';
+import { AngularFirestore, SnapshotOptions } from '@angular/fire/firestore';
 @Injectable({
   providedIn: 'root'
 })
