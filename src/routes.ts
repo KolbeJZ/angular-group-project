@@ -14,6 +14,8 @@ export const appRoutes = [
   { path: 'expand/:category', component: ExpandCategoryComponent},
   { path: 'search', component: SearchComponent },
   { path: "login", component: LoginComponent},
-  { path: 'profile', component: ProfileComponent, canActivate:[GuardService]},
+  { path: 'profile', component: ProfileComponent, 
+  // canActivate:[GuardService]
+},
   { path: '', redirectTo: '/news', pathMatch: 'full' }
 ];
