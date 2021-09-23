@@ -1,5 +1,6 @@
 export interface Users {
     name: string;
-    userid: string;
+    userId: string;
+    favorites: string[];
   }
   
