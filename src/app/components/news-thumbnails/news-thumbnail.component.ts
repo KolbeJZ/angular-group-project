@@ -30,9 +30,10 @@ export class NewsThumbnailComponent {
     this.selected = !this.selected;
     this.selectedChange.emit(this.selected);
     if(this.selected) {
-      this.db.like(article.url);
+      console.log(article)
+      this.db.like(article);
     } else {
-      this.db.delete(article.url);
+      this.db.delete(article);
     }
   }
 }

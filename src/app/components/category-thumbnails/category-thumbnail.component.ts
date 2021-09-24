@@ -34,9 +34,9 @@ export class CategoryThumbnailComponent {
     this.selected = !this.selected;
     this.selectedChange.emit(this.selected);
     if(this.selected) {
-      this.db.like(article.url);
+      this.db.like(article);
     } else {
-      this.db.delete(article.url);
+      this.db.delete(article);
     }
   }
 }
