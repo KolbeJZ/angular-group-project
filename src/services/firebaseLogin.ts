@@ -13,12 +13,13 @@ export class FirebaseLoginService  {
   logout(arg0: { returnTo: string; }) {
     throw new Error('Method not implemented.');
   }
+  userData: any;
   constructor(
       public afAuth: AngularFireAuth, 
       private router: Router,
       private zone: NgZone,
       private db: AngularFirestore,
-      public af: AngularFireAuth,
+    //   public af: AngularFireAuth,
       ) {
 
   }
@@ -45,6 +46,7 @@ export class FirebaseLoginService  {
   }
   signOut() {
       this.afAuth.auth.signOut();
+      localStorage.removeItem('user');
   }
     currentUser() {
       return this.afAuth.auth.currentUser;
@@ -79,12 +81,27 @@ newUserLogin(user: Users) {
   }
 
 like(art: any) {
-    let current = this.afAuth.auth.currentUser;
+    let current = JSON.parse(localStorage.getItem('user'));
       return this.db.collection('users').doc(current.uid).update(
         {
           favorites: firestore.FieldValue.arrayUnion(art)
          });
       
     }
+    delete(art: any) {
+        let current = JSON.parse(localStorage.getItem('user'));
+        return this.db.collection('users').doc(current.uid).update(
+          {
+            favorites: firestore.FieldValue.arrayRemove(art)
+           });
+    }
+// like(art: any) {
+//     let current = this.afAuth.auth.currentUser;
+//       return this.db.collection('users').doc(current.uid).update(
+//         {
+//           favorites: firestore.FieldValue.arrayUnion(art)
+//          });
+      
+//     }
 
 }
