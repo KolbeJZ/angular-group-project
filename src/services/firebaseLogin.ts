@@ -33,7 +33,7 @@ export class FirebaseLoginService  {
             userId: this.afAuth.auth.currentUser.uid,
             favorites: []
           }
-        // this.db.newUserLogin(log);
+        this.newUserLogin(log);
         this.like('test5');
         this.zone.run(()=>this.router.navigate(['/profile']));
     }

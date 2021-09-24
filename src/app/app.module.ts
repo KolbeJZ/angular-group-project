@@ -34,6 +34,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import { GuardService } from 'src/services/guard.service';
+import { LogoutComponent } from './components/logout/logout.component';
 export const firebaseConfig = environment.firebaseConfig;
 
 @NgModule({
@@ -50,6 +51,7 @@ export const firebaseConfig = environment.firebaseConfig;
     SearchComponent,
     LoginComponent,
     ProfileComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

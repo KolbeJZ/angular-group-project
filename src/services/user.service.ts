@@ -1,4 +1,4 @@
-// import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 // import { AngularFireAuth } from "@angular/fire/auth";
 // import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 // import * as firebase from "firebase/app";
@@ -9,15 +9,17 @@
 // enum DataExtension {
 //   Favorites = 'favorites'
 // }
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class UserService {
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
 //   constructor(
 //     public afAuth: AngularFireAuth, 
 //     private auth: AngularFireAuth,
 //     private store: AngularFirestore
-//   ) {
+//   ) 
+// {
+}
 //     this.auth.authState.subscribe(
 //       user => {
 //         console.log("User is being updated!")
@@ -71,7 +73,6 @@
 //             reject('User is not signed in!')
 //             return
 //           }
-//           // TODO: - Add duplication protection
 //           this.store
 //             .collection('users')
 //             .doc(currentUserId)
@@ -128,6 +129,6 @@
 //         this.errorText = error
 //       }
 //     )
-//   }
+  // }
 //   private errorText: string = ""
 // }

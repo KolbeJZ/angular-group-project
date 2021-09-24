@@ -15,7 +15,7 @@ export const appRoutes = [
   { path: 'search', component: SearchComponent },
   { path: "login", component: LoginComponent},
   { path: 'profile', component: ProfileComponent, 
-  // canActivate:[GuardService]
+  canActivate:[GuardService]
 },
   { path: '', redirectTo: '/news', pathMatch: 'full' }
 ];

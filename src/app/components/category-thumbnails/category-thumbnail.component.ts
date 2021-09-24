@@ -19,9 +19,9 @@ export class CategoryThumbnailComponent {
               private router: Router) {
 
   }
-  // addToFavorites(item: IArticle) {
-  //   this.user.addToFavorites(item)
-  // }
+  addToFavorites(item: IArticle) {
+    this.user.addToFavorites(item)
+  }
 
   onMoreClick(article: IArticle) {
     this.storage.storeData(article);
