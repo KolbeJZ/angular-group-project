@@ -21,9 +21,9 @@ export class CategoryThumbnailComponent {
               private db: FirebaseLoginService) {
 
   }
-  // addToFavorites(item: IArticle) {
-  //   this.user.addToFavorites(item)
-  // }
+  addToFavorites(item: IArticle) {
+    this.user.addToFavorites(item)
+  }
 
   onMoreClick(article: IArticle) {
     this.storage.storeData(article);

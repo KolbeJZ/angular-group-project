@@ -1,5 +1,5 @@
 <div class="container">
-  <h2 *ngIf="getCountry() === 'us'">Search news</h2>
+  <h2 *ngIf="getCountry() === 'us'" style="color: white;">Search news</h2>
 
   <div class="col-md-8 col-md-offset-3">
     <form #searchForm="ngForm" role="form" id="form-buscar" (ngSubmit)="onSearch(searchForm.value)" autocomplete="off">

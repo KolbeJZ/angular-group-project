@@ -2,7 +2,12 @@
 
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color:#368f8b;
+  background-color:white;
+  background-image: url('https://www.shareaholic.com/blog/wp-content/uploads/2012/06/crowd-of-people.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: fixed;
   color: black;
 }
 h3 a p {
@@ -24,7 +29,7 @@ h1.a{
   /* padding-top:10px; */
 }
 h1.b{
-  color:#160f29;
+  color:#3db9b3;
   display:inline-block;
   font-size: 30px;
   /* padding-top:10px; */
@@ -32,9 +37,9 @@ h1.b{
 .container-fluid {
   background-color: #ddbea8;
 }
-.container {
+/* .container {
   /* padding-top: 10px; */
-}
+/* } */ 
 
 .pointable {
   cursor: pointer;

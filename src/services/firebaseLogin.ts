@@ -35,18 +35,6 @@ export class FirebaseLoginService  {
             favorites: []
           }
         this.newUserLogin(log);
-        this.afAuth.authState.subscribe(user => {
-            if (user) {
-              this.userData = user;
-              localStorage.setItem('user', JSON.stringify(this.userData));
-              JSON.parse(localStorage.getItem('user'));
-            } else {
-              localStorage.setItem('user', null);
-              JSON.parse(localStorage.getItem('user'));
-            }
-          })
-        
-
         this.like('test5');
         this.zone.run(()=>this.router.navigate(['/profile']));
     }
