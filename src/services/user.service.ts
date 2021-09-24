@@ -1,23 +1,24 @@
-// import { Injectable } from "@angular/core";
-// import { AngularFireAuth } from "@angular/fire/auth";
-// import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
-// import * as firebase from "firebase/app";
-// // import firebase from 'firebase/app'
-// import { Observable, pipe } from 'rxjs';
-// import { tap } from 'rxjs/operators'
-// import { IArticle } from "src/models/Article";
+import { Injectable } from "@angular/core";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
+import * as firebase from "firebase/app";
+// import firebase from 'firebase/app'
+import { Observable, pipe } from 'rxjs';
+import { tap } from 'rxjs/operators'
+import { IArticle } from "src/models/Article";
 // enum DataExtension {
 //   Favorites = 'favorites'
 // }
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class UserService {
-//   constructor(
+@Injectable({
+  providedIn: 'root'
+})
+export class UserService {
+  constructor(
 //     public afAuth: AngularFireAuth, 
 //     private auth: AngularFireAuth,
 //     private store: AngularFirestore
-//   ) {
+  ) 
+  {
 //     this.auth.authState.subscribe(
 //       user => {
 //         console.log("User is being updated!")
@@ -35,7 +36,7 @@
 //             ).valueChanges() as Observable<IArticle[]>
 //           ).pipe(tap(console.log))
 //       }})
-//     }
+    }
 //   // Read
 //   user?: firebase.User | null
 //   favorites?: Observable<Array<IArticle>>
@@ -130,4 +131,4 @@
 //     )
 //   }
 //   private errorText: string = ""
-// }
+}
