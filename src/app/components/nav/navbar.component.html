@@ -7,13 +7,28 @@
       <a class="navbar-brand" routerLink="/categories" >Categories</a>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/search" >Search</a>
+      <a class="navbar-brand" routerLink="/search">Search</a>
     </div>
 
     <div class="collapse navbar-collapse">
       <div class="navbar-header navbar-right">
         <div class="navbar-header">
-          <a class="navbar-brand" routerLink="/login" >Login</a>
+          
+          <button mat-fab [matMenuTriggerFor]="menu" *ngIf='logged'>
+            {{db.userData$.displayName}}
+          </button>
+          <mat-menu #menu='matMenu'>
+            <button mat-menu-item routerLink='/profile'>Profile</button>
+            <button mat-menu-item routerLink='/news' (click)='signOut()'>Sign Out</button>
+          </mat-menu>
+          <button mat-fab [matMenuTriggerFor]="menu2" *ngIf='!logged'>
+            <mat-icon>account_circle</mat-icon> 
+          </button>
+          <mat-menu #menu2='matMenu'>
+            <button mat-menu-item (click)=(signIn())>Sign In</button>
+            <!-- <button mat-menu-item routerLink='/login'>Sign In</button> -->
+          </mat-menu>
+          <!-- <a class="navbar-brand" routerLink="/login">Login</a> -->
         </div>
       </div>
     </div>

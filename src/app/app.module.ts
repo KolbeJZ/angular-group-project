@@ -28,6 +28,7 @@ import { AngularFirestoreModule, PERSISTENCE_SETTINGS } from '@angular/fire/fire
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -63,7 +64,8 @@ export const firebaseConfig = environment.firebaseConfig;
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     NewsService,
