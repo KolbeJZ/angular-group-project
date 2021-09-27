@@ -1,3 +1,10 @@
-<div>{{ tester$[0].name }}</div>
-  <button (click)="dataService.like('test3')">Add Url to database</button>
-  
+<div>
+  <h1 class="a">Likes</h1>
+        
+  <hr/>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of favorites">
+      <app-news-thumbnail [article]="article"></app-news-thumbnail>
+    </div>
+  </div>
+</div>

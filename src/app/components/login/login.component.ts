@@ -17,5 +17,5 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.db.getSingle();
   }
-
+  
 }

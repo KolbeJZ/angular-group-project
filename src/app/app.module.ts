@@ -24,11 +24,11 @@ import { ExpandCategoryComponent } from './components/categories/expand-category
 import { SearchComponent } from './components/search/search.component';
 import { LoginComponent } from './components/login/login.component';
 import { FirebaseLoginService } from 'src/services/firebaseLogin';
-
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, PERSISTENCE_SETTINGS } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireAuthModule} from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { ProfileComponent } from './components/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -64,7 +64,8 @@ export const firebaseConfig = environment.firebaseConfig;
     AngularFireAuthModule,
     AngularFireStorageModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [
     NewsService,
