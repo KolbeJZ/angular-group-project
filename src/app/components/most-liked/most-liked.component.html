@@ -1,0 +1,10 @@
+<div>
+    <h1 class="a">Most</h1>
+          <h1 class="b">Liked</h1>
+    <hr/>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let article of topNews">
+        <app-news-thumbnail [article]="article"></app-news-thumbnail>
+      </div>
+    </div>
+  </div>

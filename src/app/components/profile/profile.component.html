@@ -1,10 +1,10 @@
 <div>
-  <h1 class="a">Likes</h1>
+  <h1 class="a">My Likes</h1>
         
   <hr/>
   <div class="row">
     <div class="col-md-4" *ngFor="let article of favorites">
-      <app-news-thumbnail [article]="article"></app-news-thumbnail>
+      <app-news-thumbnail [selected] = 'true' [article]="article"></app-news-thumbnail>
     </div>
   </div>
 </div>

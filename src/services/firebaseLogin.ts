@@ -104,13 +104,14 @@ newUserLogin(user: Users) {
   }
 
 like(art: any) {
+    this.addMostLiked(art);
     let current = JSON.parse(localStorage.getItem('user'));
       return this.db.collection('users').doc(current.uid).update(
         {
           favorites: firestore.FieldValue.arrayUnion(art)
          });
-      
     }
+
     delete(art: any) {
         let current = JSON.parse(localStorage.getItem('user'));
         return this.db.collection('users').doc(current.uid).update(
@@ -126,5 +127,27 @@ like(art: any) {
 //          });
       
 //     }
+    addMostLiked(art) {
+      let popular = this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').valueChanges().subscribe(
+        (res: any) => {
 
+          this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').set({
+            topArticles: firestore.FieldValue.arrayUnion({article: {article: art,totalLikes: 0}, merge:{merge: true}})
+          })
+          console.log("db likes",res.topArticles);
+          res.topArticles.forEach((x, index) => {
+            console.log("this is ofre each",x)
+            if(x.article === art) {
+              console.log('it was found')
+              return this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').update({
+                topArticles: firestore.FieldValue.arrayUnion({
+                  article: 'test',
+                  totalLikes: x.totalLikes + 1
+                })
+              })
+            }
+          });
+        }
+      )
+    }
 }
