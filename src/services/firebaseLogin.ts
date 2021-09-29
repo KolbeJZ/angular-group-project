@@ -128,26 +128,29 @@ like(art: any) {
       
 //     }
     addMostLiked(art) {
-      let popular = this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').valueChanges().subscribe(
-        (res: any) => {
-
-          this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').set({
-            topArticles: firestore.FieldValue.arrayUnion({article: {article: art,totalLikes: 0}, merge:{merge: true}})
-          })
-          console.log("db likes",res.topArticles);
-          res.topArticles.forEach((x, index) => {
-            console.log("this is ofre each",x)
-            if(x.article === art) {
-              console.log('it was found')
-              return this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').update({
-                topArticles: firestore.FieldValue.arrayUnion({
-                  article: 'test',
-                  totalLikes: x.totalLikes + 1
-                })
-              })
-            }
-          });
-        }
-      )
+      
     }
+    // addMostLiked(art) {
+    //   let popular = this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').valueChanges().subscribe(
+    //     (res: any) => {
+
+    //       this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').set({
+    //         topArticles: firestore.FieldValue.arrayUnion({article: {article: art,totalLikes: 0}, merge:{merge: true}})
+    //       })
+    //       console.log("db likes",res.topArticles);
+    //       res.topArticles.forEach((x, index) => {
+    //         console.log("this is ofre each",x)
+    //         if(x.article === art) {
+    //           console.log('it was found')
+    //           return this.db.collection('mostLiked').doc('f1qDNHX3CTyhvlODZTs2').update({
+    //             topArticles: firestore.FieldValue.arrayUnion({
+    //               article: 'test',
+    //               totalLikes: x.totalLikes + 1
+    //             })
+    //           })
+    //         }
+    //       });
+    //     }
+    //   )
+    // }
 }
