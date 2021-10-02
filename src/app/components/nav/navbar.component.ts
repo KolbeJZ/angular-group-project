@@ -8,7 +8,8 @@ import { FirebaseLoginService } from 'src/services/firebaseLogin';
 
 @Component({
   selector: 'app-navbar',
-  templateUrl: './navbar.component.html'
+  templateUrl: './navbar.component.html',
+  
 })
 export class NavbarComponent implements OnInit{
   logged = false;
@@ -68,9 +69,9 @@ export class NavbarComponent implements OnInit{
     this.db.signIn();
     this.db.userData$.subscribe((res)=> {
       this.current$ = res;
+      this.router.navigate(['/profile'])
     });
     this.logged = true;
-    this.router.navigate(['/profile'])
     
     
 
