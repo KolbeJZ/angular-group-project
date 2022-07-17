@@ -1,4 +1,5 @@
 <div>
+<<<<<<< HEAD
     <h1 class="a">My Likes</h1>
           
     <hr/>
@@ -8,3 +9,14 @@
       </div>
     </div>
   </div>
+=======
+  <h1 class="a">My Likes</h1>
+        
+  <hr/>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let article of favorites">
+      <app-news-thumbnail [selected] = 'true' [article]="article"></app-news-thumbnail>
+    </div>
+  </div>
+</div>
+>>>>>>> 4311ad1b1e9b7f6dd83dec021a1f997518ce8e08

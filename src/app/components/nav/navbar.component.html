@@ -1,19 +1,42 @@
-<div class="navbar navbar-default">
+<div class="navbar navbar-default" [ngStyle]="{'align-items': 'center'}">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" routerLink="/news" >Top News</a>
     </div>
     <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/mostLiked">Popular</a>
+    </div>
+    <div class="navbar-header">
       <a class="navbar-brand" routerLink="/categories" >Categories</a>
     </div>
     <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/search" >Search</a>
+      <a class="navbar-brand" routerLink="/search">Search</a>
     </div>
 
     <div class="collapse navbar-collapse">
       <div class="navbar-header navbar-right">
         <div class="navbar-header">
-          <a class="navbar-brand" routerLink="/login" >Login</a>
+          
+          <button 
+          mat-fab [matMenuTriggerFor]="menu" 
+          *ngIf='logged'
+          [ngStyle]="{'background-color':'#ddbea8', 'border': 'none', 'font-size':'1.3em','display':'flex', 'flex-direction': 'row', 'align-items': 'center','margin-top': '5%', 'color': '#ebebeb'}">
+            <div>{{db.userData$.displayName}}</div>
+            <mat-icon>expand_more</mat-icon>
+          </button>
+
+          <mat-menu #menu='matMenu'>
+            <button mat-menu-item routerLink='/profile'>Profile</button>
+            <button mat-menu-item routerLink='/news' (click)='signOut()'>Sign Out</button>
+          </mat-menu>
+          <button mat-fab [matMenuTriggerFor]="menu2" *ngIf='!logged' [ngStyle]="{'background-color':'#ddbea8', 'border': 'none', 'font-size':'1.3em','display':'flex', 'flex-direction': 'row', 'align-items': 'center','margin-top': '5%', 'color': '#ebebeb'}">
+            <mat-icon>account_circle</mat-icon> 
+          </button>
+          <mat-menu #menu2='matMenu'>
+            <button mat-menu-item (click)=(signIn())>Sign In</button>
+            <!-- <button mat-menu-item routerLink='/login'>Sign In</button> -->
+          </mat-menu>
+          <!-- <a class="navbar-brand" routerLink="/login">Login</a> -->
         </div>
       </div>
     </div>
