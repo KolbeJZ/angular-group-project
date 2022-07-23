@@ -16,7 +16,7 @@ exports.config = {
     'browserName': 'chrome'
   },
   directConnect: true,
-  baseUrl: 'kolbezimmerman.com',
+  baseUrl: 'https://angular-group-project.vercel.app/news',
   framework: 'jasmine',
   jasmineNodeOpts: {
     showColors: true,
